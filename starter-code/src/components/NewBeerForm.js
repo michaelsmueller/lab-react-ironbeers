@@ -34,7 +34,7 @@ export default class NewBeerForm extends Component {
   render() {
     const { name, tagline, description, first_brewed, brewers_tips, attenuation_level, contributed_by } = this.state;
     return (
-      <form className='new-beer'>
+      <form onSubmit={this.handleSubmit} className='new-beer'>
         <label htmlFor='name'>Name</label>
         <input
           type='text'
@@ -98,7 +98,7 @@ export default class NewBeerForm extends Component {
           onChange={this.handleInput}
           />
         
-        <button onClick={this.handleSubmit}>Add New</button>
+        <button type='submit'>Add New</button>
       </form>
     )
   }
